@@ -1,0 +1,60 @@
+{
+    "vm": [
+        {
+            "subscription_id": "bbdc17d7-4d7f-417d-85a9-388e54d56519",
+            "resource_group": "demo",
+            "region": "west europe",
+            "vm_name": "myVM",
+            "instance_type": "Standard_B1s",
+            "image": {
+                "publisher": "Canonical",
+                "offer": "UbuntuServer",
+                "sku": "24.04-LTS",
+                "version": "latest"
+            },
+            "admin_username": "azureuser",
+            "admin_password": "Prashu@1807",
+            "ssh_key_path": "~/.ssh/id_rsa.pub",
+            "count": 3,
+            "os_disk": {
+                "name": "osDisk", 
+                "disk_size": 100,
+                "storage_account_type": "Standard_LRS"
+            },
+            "network": {
+                "vnet_name": "myVNet",
+                "subnet_name": "default",
+                "security_group_name": "myNSG",
+                "public_ip_name": "myPublicIP",
+                "nic_name": "myNIC"
+            },
+            "ingress_rules": [
+                {
+                    "protocol": "tcp",
+                    "port": 22,
+                    "ips": [
+                        "10.xxx.xxx.0/xx"
+                    ]
+                },
+                {
+                    "protocol": "tcp",
+                    "port": 2289,
+                    "ips": [
+                        "10.xxx.xxx.0/xx"
+                    ]
+                }
+            ],
+            "tags": {
+                "OHR ID": "xxx",
+                "Project Name": "demo",
+                "Stack": "POC",
+                "Instance Schedule": "test",
+                "OS Type": "linux",
+                "Application Support": "test",
+                "PID": "1",
+                "SDO Code": "NA",
+                "CC Code": "NA"
+            }
+        }
+    ]
+}
